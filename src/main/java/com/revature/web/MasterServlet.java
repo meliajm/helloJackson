@@ -1,5 +1,6 @@
 package com.revature.web;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -38,8 +39,13 @@ public class MasterServlet extends HttpServlet {
 							int id = Integer.parseInt(portions[1]);
 							 ac.getAvenger(res, id);
 							
-						}
+						} else if (portions.length==1) {
+							ac.getAllAvengers(res);
+						} 
 					} else if (req.getMethod().equals("POST")) {
+						
+						ac.addAvenger(req, res);
+						
 						
 					}
 			}
